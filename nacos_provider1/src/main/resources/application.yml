@@ -1,0 +1,25 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: nacos-provider1
+  datasource:
+    url: jdbc:mysql://localhost:3306/home33?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+mapper:
+  mappers: tk.mybatis.mapper.common.Mapper
+  not-empty: false
+  identity: MYSQL
+  style: camelhump
+#mybatis分页配置
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countsql
